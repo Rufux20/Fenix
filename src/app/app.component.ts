@@ -10,6 +10,8 @@ import { PromocionesPage } from '../pages/promociones/promociones';
 @Component({
   templateUrl: 'app.html'
 })
+
+
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
@@ -21,11 +23,12 @@ export class MyApp {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
-    this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage },
-      { title: 'Promociones',component: PromocionesPage}
-    ];
+      this.pages = [
+        //{ title: 'Home', component: HomePage },
+        { title: 'List', component: ListPage },
+        { title: 'Promociones',component: PromocionesPage}
+      ];
+     
 
   }
 
