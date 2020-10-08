@@ -15,6 +15,18 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
+$lightblue-color: #21b5eb;
+$toast-max-width: 700px;
+$toast-width: 95%;
+
 .center-text{
     text-align: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+.text-lightblue{
+    color: $lightblue-color;
 }

@@ -8,20 +8,21 @@
     <div text-center>
         <img src="assets/imgs/people.png" class="login-image"/>
     </div>
-    <ion-list>
+    <ion-content>
+      <ion-list>
         <ion-item>
-          <ion-label fixed>email</ion-label>
-          <ion-input type="email" name="email"></ion-input>
+          <ion-label stacked>Correo electrónico</ion-label>
+          <ion-input type="email" [(ngModel)]="clientData.correo" placeholder="Correo electrónico"></ion-input>
         </ion-item>
   
         <ion-item>
-          <ion-label fixed>contraseña</ion-label>
-          <ion-input type="password" name="password"></ion-input>
+          <ion-label stacked>Contraseña</ion-label>
+          <ion-input type="password" [(ngModel)]="clientData.clave" placeholder="Contraseña"></ion-input>
         </ion-item>
-  
-        <div padding>
-          <button ion-button color="primary" block>Iniciar sesión</button>
-          <a href="../promociones/promociones.html" class="celeste">¿Has olvidado tu contraseña?</a>
+        <div  class="center-text" padding>
+          <button ion-button color="primary" block (click)="login()">Iniciar sesión</button>
+          <a href="../promociones/promociones.html" class="text-lightblue">¿Has olvidado tu contraseña?</a>
         </div>  
-    </ion-list>
+      </ion-list>
+    </ion-content>
 </ion-content>
