@@ -1,32 +1,30 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
 import $ from 'jquery';
 
-const API_CLIENTE = 'http://localhost/Fenix/core/api/cliente.php?action=';
+const API_PROMOCION = 'http://localhost/Fenix/core/api/promocion.php?action=';
 
 /*
-  Generated class for the ClientServiceProvider provider.
+  Generated class for the PromocionServiceProvider provider.
 
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
 @Injectable()
-export class ClientServiceProvider {
+export class PromocionServiceProvider {
 
-  constructor(private http: HttpClient) {
-    console.log('Hello ClientServiceProvider Provider');
+  constructor(public http: HttpClient) {
+    console.log('Hello PromocionServiceProvider Provider');
   }
+
   postData(credentials, type) {
     return new Promise((resolve, reject) => {
       credentials = JSON.stringify(credentials);
-      const dataP = JSON.stringify({
-        correo: 123,
-        clave: 'Hello, world!'
-      });
       console.log(credentials);
       $.ajax({
         method: 'POST',
-        url: API_CLIENTE + type,
+        url: API_PROMOCION + type,
         data: credentials,
         dataType: 'json',
         crossDomain: true,
@@ -46,6 +44,7 @@ export class ClientServiceProvider {
     });
   }
   getData(type) {
-    return this.http.get(API_CLIENTE + type);
+    return this.http.get(API_PROMOCION + type);
   }
+
 }
