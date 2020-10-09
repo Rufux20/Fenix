@@ -4,8 +4,8 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 import { PromocionesPage } from '../pages/promociones/promociones';
+import { OrdenesPage } from '../pages/ordenes/ordenes';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -18,8 +18,8 @@ import * as $ from 'jquery';
   declarations: [
     MyApp,
     HomePage,
-    ListPage,
-    PromocionesPage
+    PromocionesPage,
+    OrdenesPage
   ],
   imports: [
     BrowserModule,
@@ -30,8 +30,8 @@ import * as $ from 'jquery';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage,
-    PromocionesPage
+    PromocionesPage,
+    OrdenesPage
   ],
   providers: [
     StatusBar,
