@@ -12,6 +12,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpClientModule } from '@angular/common/http';
 import { ClientServiceProvider } from '../providers/client-service/client-service';
+
 import * as $ from 'jquery';
 
 import { PromocionServiceProvider } from '../providers/promocion-service/promocion-service';
