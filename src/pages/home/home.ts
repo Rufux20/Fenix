@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { ClientServiceProvider } from '../../providers/client-service/client-service';
 import { SettingsPage } from '../settings/settings'
+import { PromocionesPage } from '../promociones/promociones';
 
 @Component({
   selector: 'page-home',
@@ -30,7 +31,8 @@ export class HomePage {
         if(this.responseData = result['dataset']){
           console.log(this.responseData);
           localStorage.setItem('clientData', JSON.stringify(this.responseData));
-          this.navCtrl.push(SettingsPage);
+          //this.navCtrl.push(SettingsPage);
+          this.navCtrl.push(PromocionesPage);
         }
       } else {
         this.presentToast( result['exception'] );
