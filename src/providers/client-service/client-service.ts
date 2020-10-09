@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import $ from 'jquery';
 
-const API_CLIENTE = 'http://localhost/Fenix/core/api/cli.php?action=login';
+const API_CLIENTE = 'http://localhost/Fenix/core/api/cliente.php?action=';
 
 /*
   Generated class for the ClientServiceProvider provider.
@@ -18,41 +18,29 @@ export class ClientServiceProvider {
   }
   postData(credentials, type) {
     return new Promise((resolve, reject) => {
-      let httpHeaders = new HttpHeaders({
-        'Content-Type' : 'application/json',
-        'Cache-Control': 'no-cache' 
-      });
-      let options = {
-        headers: httpHeaders
-      };
+      credentials = JSON.stringify(credentials);
       const dataP = JSON.stringify({
         correo: 123,
-        clave: 'Hello, world!',
-        action: 'login'
+        clave: 'Hello, world!'
       });
-      console.log(dataP)
+      console.log(credentials);
       $.ajax({
-        method: "POST",
-        url: API_CLIENTE,
-        data: dataP,
+        method: 'POST',
+        url: API_CLIENTE+type,
+        data: credentials,
         dataType: 'json',
         crossDomain: true,
         cache: false
     })
     .done(function( response ) {
-        // Se comprueba si la API ha retornado una respuesta satisfactoria, de lo contrario se muestra un mensaje de error.
-        if ( response.status ) {
-            alert( response.message );
-        } else {
-            alert( response.exception );
-        }
+        resolve(response);
     })
     .fail( function( jqXHR ) {
         // Se verifica si la API ha respondido para mostrar la respuesta, de lo contrario se presenta el estado de la petición.
         if ( jqXHR.status == 200 ) {
-            console.log( jqXHR.responseText );
+            console.error( jqXHR.responseText );
         } else {
-            console.log( jqXHR.status + ' ' + jqXHR.statusText );
+            console.error( jqXHR.status + ' ' + jqXHR.statusText );
         }
     })
     });
