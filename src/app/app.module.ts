@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ClientServiceProvider } from '../providers/client-service/client-service';
 
 import * as $ from 'jquery';
+import { PromocionServiceProvider } from '../providers/promocion-service/promocion-service';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import * as $ from 'jquery';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ClientServiceProvider
+    ClientServiceProvider,
+    PromocionServiceProvider
   ]
 })
 export class AppModule {}
