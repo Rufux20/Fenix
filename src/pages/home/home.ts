@@ -22,13 +22,26 @@ export class HomePage {
   }
 
   login(){
-    this.clientServiceProvider.postData(this.clientData,'login')
+    this.clientServiceProvider.postData(this.clientData,'login').then((result) => {
+      // Se comprueba si la API ha retornado una respuesta satisfactoria, de lo contrario se muestra un mensaje de error.
+      if ( result['status'] ) {
+        this.presentToast( result['message'] );       
+        if(this.responseData = result['dataset']){
+          console.log(this.responseData);
+          localStorage.setItem('clientData', JSON.stringify(this.responseData));
+        }
+      } else {
+        this.presentToast( result['exception'] );
+      }
+    }, (err) => {
+      console.error('gg')
+    });
   }
 
 
-  presentToast() {
+  presentToast(message) {
     let toast = this.toastCtrl.create({
-      message: 'Funciona la tostada',
+      message: message,
       duration: 3000,
       position: 'top'
     });
