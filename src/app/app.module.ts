@@ -24,9 +24,9 @@ import { SettingsPage } from '../pages/settings/settings';
     MyApp,
     HomePage,
     PromocionesPage,
+    SettingsPage,
     OrdenesPage,
-    PromocionesDetailPage,
-    SettingsPage
+    PromocionesDetailPage
   ],
   imports: [
     BrowserModule,
@@ -38,9 +38,9 @@ import { SettingsPage } from '../pages/settings/settings';
     MyApp,
     HomePage,
     PromocionesPage,
+    SettingsPage,
     OrdenesPage,
-    PromocionesDetailPage,
-    SettingsPage
+    PromocionesDetailPage
   ],
   providers: [
     StatusBar,

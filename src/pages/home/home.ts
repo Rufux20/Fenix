@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { ClientServiceProvider } from '../../providers/client-service/client-service';
 import { SettingsPage } from '../settings/settings'
+import { PromocionesPage } from '../promociones/promociones';
 
 @Component({
   selector: 'page-home',
@@ -22,6 +23,10 @@ export class HomePage {
     //this.loginForm = this.createLoginForm();
   }
 
+  ionViewDidLoad() {
+    this.presentToast('¡Bienvenido!');
+  }
+
   login(){
     this.clientServiceProvider.postData(this.clientData,'login').then((result) => {
       // Se comprueba si la API ha retornado una respuesta satisfactoria, de lo contrario se muestra un mensaje de error.
@@ -30,7 +35,8 @@ export class HomePage {
         if(this.responseData = result['dataset']){
           console.log(this.responseData);
           localStorage.setItem('clientData', JSON.stringify(this.responseData));
-          this.navCtrl.push(SettingsPage);
+          //this.navCtrl.push(SettingsPage);
+          this.navCtrl.push(PromocionesPage);
         }
       } else {
         this.presentToast( result['exception'] );

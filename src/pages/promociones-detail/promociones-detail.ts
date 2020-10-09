@@ -14,12 +14,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'promociones-detail.html',
 })
 export class PromocionesDetailPage {
-
+  promocion: any[] = [];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PromocionesDetailPage');
+    this.promocion = this.navParams.get('promocion');
   }
 
 }

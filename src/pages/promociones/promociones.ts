@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PromocionesDetailPage } from '../promociones-detail/promociones-detail';
+import { PromocionServiceProvider } from '../../providers/promocion-service/promocion-service';
 
 /**
  * Generated class for the PromocionesPage page.
@@ -16,15 +17,28 @@ import { PromocionesDetailPage } from '../promociones-detail/promociones-detail'
 })
 export class PromocionesPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  promociones: any[] = [];
+  responseData : any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public promocionServiceProvider: PromocionServiceProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PromocionesPage');
+    this.promocionServiceProvider.getData('readAll')
+    .subscribe(
+      (data) => {
+        this.promociones = data['dataset'];
+        console.log(this.promociones)
+      },
+      (error) => {
+        console.error(error);
+      }
+    )
   }
 
- detail(){
-  this.navCtrl.push(PromocionesDetailPage);
+ detail(promocion){
+  this.navCtrl.push(PromocionesDetailPage, {promocion:promocion});
  }
 
 }
