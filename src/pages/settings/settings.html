@@ -1,0 +1,32 @@
+<!--
+  Generated template for the SettingsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Ajustes</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>Contraseña actual</ion-label>
+      <ion-input type="password" [(ngModel)]="clientPostData.claveactual" placeholder="Ingresa tu contraseña actual"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Nueva contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="clientPostData.clave1" placeholder="Ingresa la nueva contraseña"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Repetir contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="clientPostData.clave2" placeholder="Repite la contraseña"></ion-input>
+    </ion-item>
+    <div  class="center-text" padding>
+      <button ion-button color="primary" block (click)="changePassword()">Cambiar contraseña</button>
+    </div>  
+  </ion-list>
+  <button ion-button color="primary" (click)="logout()">Logout</button>
+</ion-content>

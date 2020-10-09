@@ -11,16 +11,17 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpClientModule } from '@angular/common/http';
 import { ClientServiceProvider } from '../providers/client-service/client-service';
-
 import * as $ from 'jquery';
 import { PromocionServiceProvider } from '../providers/promocion-service/promocion-service';
+import { SettingsPage } from '../pages/settings/settings';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,
-    PromocionesPage
+    PromocionesPage,
+    SettingsPage
   ],
   imports: [
     BrowserModule,
@@ -32,7 +33,8 @@ import { PromocionServiceProvider } from '../providers/promocion-service/promoci
     MyApp,
     HomePage,
     ListPage,
-    PromocionesPage
+    PromocionesPage,
+    SettingsPage
   ],
   providers: [
     StatusBar,

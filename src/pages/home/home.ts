@@ -3,6 +3,7 @@ import { NavController, ToastController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { ClientServiceProvider } from '../../providers/client-service/client-service';
+import { SettingsPage } from '../settings/settings'
 
 @Component({
   selector: 'page-home',
@@ -29,12 +30,13 @@ export class HomePage {
         if(this.responseData = result['dataset']){
           console.log(this.responseData);
           localStorage.setItem('clientData', JSON.stringify(this.responseData));
+          this.navCtrl.push(SettingsPage);
         }
       } else {
         this.presentToast( result['exception'] );
       }
     }, (err) => {
-      console.error('gg')
+      console.error(err);
     });
   }
 
