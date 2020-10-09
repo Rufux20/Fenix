@@ -6,6 +6,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { PromocionesPage } from '../pages/promociones/promociones';
 import { OrdenesPage } from '../pages/ordenes/ordenes';
+import { PromocionesDetailPage } from '../pages/promociones-detail/promociones-detail'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -13,14 +14,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { ClientServiceProvider } from '../providers/client-service/client-service';
 
 import * as $ from 'jquery';
+
 import { PromocionServiceProvider } from '../providers/promocion-service/promocion-service';
+
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     PromocionesPage,
-    OrdenesPage
+    OrdenesPage,
+    PromocionesDetailPage
   ],
   imports: [
     BrowserModule,
@@ -32,7 +36,8 @@ import { PromocionServiceProvider } from '../providers/promocion-service/promoci
     MyApp,
     HomePage,
     PromocionesPage,
-    OrdenesPage
+    OrdenesPage,
+    PromocionesDetailPage
   ],
   providers: [
     StatusBar,

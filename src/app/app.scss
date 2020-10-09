@@ -16,6 +16,7 @@
 // automatically applied to the <body> element in the app.
 
 $lightblue-color: #21b5eb;
+$blue-color: #1b2666;
 $toast-max-width: 700px;
 $toast-width: 95%;
 
@@ -29,4 +30,13 @@ a{
 
 .text-lightblue{
     color: $lightblue-color;
+}
+
+.text-blue{
+    color: $blue-color;
+    font-size: 20px;
+}
+
+.text-blue-s{
+    color: $blue-color;
 }

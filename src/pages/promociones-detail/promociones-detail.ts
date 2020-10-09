@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { PromocionesDetailPage } from '../promociones-detail/promociones-detail';
 
 /**
- * Generated class for the PromocionesPage page.
+ * Generated class for the PromocionesDetailPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,20 +10,16 @@ import { PromocionesDetailPage } from '../promociones-detail/promociones-detail'
 
 @IonicPage()
 @Component({
-  selector: 'page-promociones',
-  templateUrl: 'promociones.html',
+  selector: 'page-promociones-detail',
+  templateUrl: 'promociones-detail.html',
 })
-export class PromocionesPage {
+export class PromocionesDetailPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PromocionesPage');
+    console.log('ionViewDidLoad PromocionesDetailPage');
   }
-
- detail(){
-  this.navCtrl.push(PromocionesDetailPage);
- }
 
 }
