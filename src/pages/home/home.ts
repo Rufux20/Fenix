@@ -10,7 +10,7 @@ import { ClientServiceProvider } from '../../providers/client-service/client-ser
 })
 export class HomePage {
   responseData: any;
-  clientData = {'correo': '', 'clave': ''};
+  clientData = {correo: '', clave: ''};
 
   constructor(
     public navCtrl: NavController,
@@ -22,18 +22,7 @@ export class HomePage {
   }
 
   login(){
-    this.clientServiceProvider.postData(this.clientData,'login').then((result) => {
-      this.responseData = result['dataset'];
-      if(this.responseData){
-        console.log(this.responseData);
-        //localStorage.setItem('clientData', JSON.stringify(this.responseData));
-        //this.navCtrl.push(TabsPage);
-        this.presentToast();
-      }
-      else{ console.log("User already exists"); }
-    }, (err) => {
-      console.error(err);
-    });
+    this.clientServiceProvider.postData(this.clientData,'login')
   }
 
 

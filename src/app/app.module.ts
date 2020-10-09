@@ -12,6 +12,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpClientModule } from '@angular/common/http';
 import { ClientServiceProvider } from '../providers/client-service/client-service';
 
+import * as $ from 'jquery';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -22,7 +24,7 @@ import { ClientServiceProvider } from '../providers/client-service/client-servic
   imports: [
     BrowserModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
