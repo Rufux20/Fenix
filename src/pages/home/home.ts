@@ -23,6 +23,10 @@ export class HomePage {
     //this.loginForm = this.createLoginForm();
   }
 
+  ionViewDidLoad() {
+    this.presentToast('¡Bienvenido!');
+  }
+
   login(){
     this.clientServiceProvider.postData(this.clientData,'login').then((result) => {
       // Se comprueba si la API ha retornado una respuesta satisfactoria, de lo contrario se muestra un mensaje de error.

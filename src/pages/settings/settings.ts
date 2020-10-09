@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 
 import { ClientServiceProvider } from '../../providers/client-service/client-service';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the SettingsPage page.
@@ -63,17 +64,11 @@ export class SettingsPage {
     });
   
     toast.present();
-  }
-
-//   backToWelcome(){
-//     const root = this.app.getRootNav();
-//     root.popToRoot();
-//  }
-  
+  } 
  
  logout(){
       localStorage.clear();
-      //setTimeout(() => this.backToWelcome(), 1000);
+      setTimeout(() => this.navCtrl.push(HomePage), 1000);
  }
 
 }

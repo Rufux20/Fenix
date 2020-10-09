@@ -16,18 +16,18 @@
 <ion-content padding>
   <div>
     <ion-item>
-      <ion-input type="text" placeholder="Busca una promoción"></ion-input>
+      <ion-input type="text" placeholder="Buscar promoción"></ion-input>
     </ion-item>
   </div>
-  <ion-card padding>
+  <ion-card padding *ngFor="let promocion of promociones">
     <div>
       <img src="assets/imgs/people.png" class="login-image"/>
     </div>
     <br>
-    <div class="text-blue">Tarjetas de presentación</div>
+    <div class="text-blue">{{promocion.titulo}}</div>
     <br>
-    <p>Descuento de 15% en tarjetas de presentación, valido hasta el 31 de octubre</p>
-    <button ion-button color="primary" block (click)="detail()">Ver promoción</button>
+    <p>{{promocion.descripcion}}</p>
+    <button ion-button color="primary" block (click)="detail(promocion)">Ver promoción</button>
     
   </ion-card>
 </ion-content>

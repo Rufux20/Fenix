@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { PromocionesPage } from '../pages/promociones/promociones';
 import { OrdenesPage } from '../pages/ordenes/ordenes';
 import { PromocionesDetailPage } from '../pages/promociones-detail/promociones-detail';
+import { SettingsPage } from '../pages/settings/settings';
 
 @Component({
   templateUrl: 'app.html'
@@ -28,6 +29,7 @@ export class MyApp {
         //{ title: 'Home', component: HomePage },
         { title: 'Promociones',component: PromocionesPage},
         { title: 'Ordenes',component: OrdenesPage},
+        { title: 'Ajustes',component: SettingsPage}
       ];
      
 
