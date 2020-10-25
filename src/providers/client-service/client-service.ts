@@ -45,6 +45,14 @@ export class ClientServiceProvider {
     })
     });
   }
+
+  pst(credentials, type){
+    credentials = JSON.stringify(credentials);
+    
+    return this.http.post(API_CLIENTE + type, credentials,
+      {responseType: 'text'})
+      
+  }
   getData(type) {
     return this.http.get(API_CLIENTE + type);
   }
